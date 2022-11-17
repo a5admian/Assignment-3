@@ -68,9 +68,6 @@ img:hover {
 .btn-btn-primary
     {
         background-color: #4CAF50;
+        border-radius: 12px;
     }
 
-.btn-btn-warning
-    {
-        background-color: #f44336;
-    }
