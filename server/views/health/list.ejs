@@ -1,0 +1,54 @@
+<%- include ../Partials/header.ejs %>
+<%- include ../Partials/main_nav.ejs %>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <h1 class="display-4">Welcome to the <%= title %></h1>
+</div>
+    <div class = "wrapper">
+        <div class = "row">
+        <div class = "col-mid-offset-3 col-md-11">
+        <a href = "/fitness/add" class="btn btn-primary" role="button">
+            <i class="fas fa-plus-circle"></i> ADD
+        </a>
+        <br>
+        <br>
+            <!---Table displaying the health list--->
+        <table class = "table table-bordered table-striped table-hover" style="background-color:#D3D3D3">
+        <tr class="d-flex">
+            <th class = "text-center col-3">Day</th>
+            <th class = "text-center col-3">Exercise</th>
+            <th class = "text-center col-2">From</th>
+            <th class = "text-center col-2">To</th>
+            <th class = "text-center col-1"></th>
+            <th class = "text-center col-1"></th>
+        </tr>
+        
+        <% for(let count=0; count<Healthlist.length; count++) { %>
+        <tr class ="d-flex">
+        <td class = "text-center col-3"><%= Healthlist[count].day %></td>
+        <td class = "text-center col-3"><%= Healthlist[count].exercise %></td>
+        <td class = "text-center col-2"><%= Healthlist[count].from %></td>
+        <td class = "text-center col-2"><%= Healthlist[count].to %></td>
+        
+        <td class = "text-center col-1">
+            <a href="/fitness/edit/<%= Healthlist[count]._id %>"
+            class="btn btn-primary">
+            <i class="fas fa-pencil-alt"></i> Edit </a>
+        </td>
+        <td class = "text-center col-1">
+            <a href="/fitness/delete/<%= Healthlist[count]._id %>"
+            class="btn btn-danger">
+            <i class="fas fa-trash-alt"></i> Delete </a>
+        </td>
+        </tr>
+        <% } %> 
+        </table>
+        </div>
+        </div>
+    </div>
+
+<%- include ../Partials/footer.ejs %>
+<%- include ../Partials/bottom_nav.ejs %>
+
+
