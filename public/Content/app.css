@@ -65,7 +65,12 @@ img:hover {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
   }
 
-.button2
+.btn-btn-primary
     {
         background-color: #4CAF50
+    }
+
+.btn-btn-warning
+    {
+        background-color: #f44336
     }
